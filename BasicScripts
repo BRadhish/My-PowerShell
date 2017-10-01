@@ -1,0 +1,47 @@
+read-host n
+
+#Read and Write Host
+Write-Host "Welcome to Payilagam"
+Write-Host "Please enter your passedout year"
+Read-Host year
+Write-Host "your passedout year is: $year"
+Write-Host "Thanks for info"
+
+#operations
+$a=10
+$b="5"
+$a+$b
+
+#Arrays
+$num=10,20,33,54
+#$num
+
+$num[2]
+
+
+#string
+$lng=@{'tn'= 'tamil' ;'en' = 'english'; 'fr'='french'}
+$lng.en
+$lng.tn
+$lng.fr
+
+Match conditions
+
+#"wisdom1a1" -match "\d\d\d"
+#"hello1" -match "\d"
+#"192.168.10.5" -match "\d\d\d.\d\d\d.\d\d.\d"
+#"19a.168.10.5" -match "\d{1,3}\.\d+\.\d+\.\d+"
+#"192.168.10.5" -match "\d{1,2}\.\d+\.\d+\.\d+"
+"192.677.10.5" -match "\d{1,3}\.\d{1,3}\.\d{1,2}\.\d"
+
+#string To integer
+
+"123a3" -cmatch "\w+"
+
+#Replace procedure
+
+"This is a gold palce " -replace "palce","palace"
+
+
+
+
