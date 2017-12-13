@@ -1,0 +1,10 @@
+#Connecting Network Share
+
+$nwd = read-host "Please Enter your letter for network drive" 
+$share = read-host "please enter the share path"
+$p = Get-Credential 
+
+
+$passwd =  "$p.GetNetworkCredential().password "
+$username = "$p.GetNetworkCredential().username "
+net use "$nw" "$share" /user:$usrname $passwd
