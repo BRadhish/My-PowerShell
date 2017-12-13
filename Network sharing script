@@ -1,10 +1,26 @@
+
 #Connecting Network Share
 
 $nwd = read-host "Please Enter your letter for network drive" 
-$share = read-host "please enter the share path"
+$ip = read-host "please enter the ip"
+$fol = read-host "please enter the folder name "
+
+$var =  $ip -cmatch "d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}"
+read-host "Press enterbto continue"
+
+if($var -cmatch "True"){ 
 $p = Get-Credential 
 
 
 $passwd =  "$p.GetNetworkCredential().password "
 $username = "$p.GetNetworkCredential().username "
-net use "$nw" "$share" /user:$usrname $passwd
+write-host "net use $nwd \\$ip\$fol /user:$usrname $passwd"
+net use "$nw" "$share" /user:$usrname $passwd 
+}
+
+elseif($var -cmatch "False")
+write-host "Ip pattern is wrong"
+}
+else{
+writehost "unknown error"
+}
