@@ -1,0 +1,15 @@
+$sapi = New-Object -com sapi.spvoice
+$sapi.speak("Please enter the choice you want")
+
+function hello()
+{
+$sapi.speak("you have opened notepad file")
+Invoke-CimMethod -ClassName win32_process -MethodName create  -Arguments @{CommandLine='notepad.exe'}
+}
+
+
+$a =Read-Host "enter the number"
+if ( $a -eq 1 )
+{
+hello 
+}
